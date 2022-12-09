@@ -13,8 +13,8 @@ class App {
             return true;
         return false;
     }
-    public static int getCountOfFreeEmails(List<String> emails) {
-        int count_emails = emails.stream()
+    public static long getCountOfFreeEmails(List<String> emails) {
+        long count_emails = emails.stream()
 //                .filter(email -> StringUtils.isNotBlank(email))
                 .filter(email -> isFree(email))
                 .count();
