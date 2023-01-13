@@ -30,8 +30,8 @@ public class App {
         ctx.addServletMappingDecoded("/", "HelloServlet");
 
         app.start();
-        app.getServer().await();
-        app.stop();
+        //app.getServer().await();
+        //app.stop();
         // END
 
         return app;
