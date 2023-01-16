@@ -50,6 +50,7 @@ public class Users {
         user.put("firstName", firstName);
         user.put("lastName", lastName);
         user.put("email", email);
+        user.put("password", "password");
 
         return user;
     }
