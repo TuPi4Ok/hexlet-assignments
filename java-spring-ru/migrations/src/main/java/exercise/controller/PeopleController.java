@@ -25,10 +25,18 @@ public class PeopleController {
     }
 
     // BEGIN
-    @GetMapping(path = "/")
-    public void getPersons() {
+    @GetMapping(path = "")
+    public List<Map<String, Object>> getPersons() {
         String query = "SELECT * FROM person;";
         List<Map<String, Object>> resultList = jdbc.queryForList(query);
+        return resultList;
+    }
+
+    @GetMapping(path = "/{id}")
+    public List<Map<String, Object>> getPerson(@PathVariable("id") int id) {
+        String query = "SELECT * FROM person WHERE id = ?;";
+        List<Map<String, Object>> resultList = jdbc.queryForList(query, id);
+        return resultList;
     }
     // END
 }
