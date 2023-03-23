@@ -20,7 +20,7 @@ public class MessageSender {
     // BEGIN
     public void sendMessage(String message) {
         LOGGER.info("Sending message to the queue...");
-        rabbitTemplate.convertAndSend("exchange", "exchange.key", message);
+        rabbitTemplate.convertAndSend("exchange", "key", message);
         LOGGER.info("Message sent successfully to the queue!!!");
     }
     // END
